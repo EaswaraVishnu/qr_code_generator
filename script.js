@@ -4,6 +4,7 @@ let button = document.querySelector(".qrbutton")
 let image = document.querySelector(".image")
 let text = document.querySelector(".guide")
 
+//generate button logic
 button.addEventListener("click",function(){
   let data = input.value;
   if(data.length > 0){
@@ -13,5 +14,12 @@ button.addEventListener("click",function(){
   }
   else{
     text.textContent = "No URL found"
+  }
+})
+
+//keypress logic
+input.addEventListener("keypress",function(event){
+  if(event.key === "Enter"){
+    button.click();
   }
 })
